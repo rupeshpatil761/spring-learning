@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+       <!-- <bean id="student1" class="com.rupesh.reference.Student1">
+       		<property name="id" value="101"></property>
+       		<property name="mathCheat">
+       			<bean class="com.rupesh.reference.MathCheat"></bean>
+       		</property>
+       </bean> -->
+       
+       <!-- But problem here is, if another student want to do cheating,
+        separate object will get created. Results in heavy app (memory) -->
+       
+       <!-- <bean id="student2" class="com.rupesh.reference.Student2">
+       		<property name="id" value="105"></property>
+       		<property name="mathCheat">
+       			<bean class="com.rupesh.reference.MathCheat"></bean>
+       		</property>
+       </bean>-->
+       
+       <!-- To avoid above problem, we will create MathCheat object separately
+             and will use ref of it whereever needed-->
+             
+       <!-- Will write above code again below -->
+       <bean name="mathCheatRef" class="com.rupesh.reference.MathCheat"></bean>
+       
+       <bean id="student1" class="com.rupesh.reference.Student1">
+       		<property name="id" value="101"/>
+       		<property name="mathCheat" ref="mathCheatRef"/>
+       </bean>
+       
+       <bean id="student2" class="com.rupesh.reference.Student2">
+       		<property name="id" value="105"/>
+       		<property name="mathCheat" ref="mathCheatRef"/>
+       </bean>
+       
+</beans>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+       
+       <bean id="student" class="com.rupesh.di.Student">
+       		<property name="id" value="101"></property>
+       		<property name="name" value="Rupesh"></property>
+       </bean>
+       
+       <bean id="student1" class="com.rupesh.di.Student1">
+       		<constructor-arg name="id" value="102" type="int"/>
+       		<!-- <constructor-arg name="name" value="Priyanka"/> -->
+       </bean>
+       
+       <!-- Note: Spring 3.0 doesn't support name attribute in constructor-arg -->
+</beans>
