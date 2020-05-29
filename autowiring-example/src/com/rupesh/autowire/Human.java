@@ -5,8 +5,8 @@ import org.springframework.beans.factory.annotation.Qualifier;
 
 public class Human {
 	
-	@Autowired  // this is will work without @Qualifier because bean id and variable name are matched else NoUniqueBeanDefinitionException
-	@Qualifier("heart1")
+	//@Autowired  // this is will work without @Qualifier because bean id and variable name are matched else NoUniqueBeanDefinitionException
+	//@Qualifier("heart1")
 	private Heart heart;
 	
 	/**
@@ -19,13 +19,13 @@ public class Human {
 		super();
 		this.heart = heart;
 		System.out.println("Human constructor get called");
-	}
+	}*/
 	
 	// Will get called in case of byName and byType autowiring
 	public void setHeart(Heart heart) {
 		System.out.println("setHeart method called");
 		this.heart = heart;
-	}*/
+	}
 
 	public void startPumping() {
 		if(heart!=null) {

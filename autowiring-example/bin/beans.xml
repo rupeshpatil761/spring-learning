@@ -8,13 +8,13 @@
         http://www.springframework.org/schema/context/spring-context.xsd">
 
        <!-- activate annotation based auto wiring -->
-       <context:annotation-config />
+       <!-- <context:annotation-config /> -->
 	   
 	   <!-- to confuse the container  -->
-	   <bean id="heart1" class="com.rupesh.autowire.Heart"/>
+	   <bean id="heart" class="com.rupesh.autowire.Heart"/>
 	   <bean id="heart2" class="com.rupesh.autowire.Heart"/>
        
-       <bean id="human" class="com.rupesh.autowire.Human"/>
+       <bean id="human" class="com.rupesh.autowire.Human" autowire="byName"/>
        
        
        
